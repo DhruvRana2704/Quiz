@@ -5,6 +5,8 @@ let sec=document.querySelector('.sec')
 min.innerHTML=`${5}`.toString().padStart(2,"0")
 sec.innerHTML=`${0}`.toString().padStart(2,"0")
 let m1_req=document.getElementById("form")
+let ips=document.querySelectorAll('input')
+let time=document.querySelector('.timesup')
 m1_req.addEventListener('submit',(e)=>{
     e.preventDefault();
     let formData=new FormData(m1_req)
@@ -13,11 +15,11 @@ m1_req.addEventListener('submit',(e)=>{
         formObject[`q${i}`]=formData.get(`q${i}`)
     }
     sessionStorage.setItem("formObject",JSON.stringify(formObject))
-    window.location.href=(`result.html`)
+    window.open("./result.html","_blank")
+    // window.location.replace("./index.html")
 })
 
-console.log(min)
-setInterval(() => {
+let interval=setInterval(() => {
     if(sec.innerHTML==0)
     {
         if(min.innerHTML!=0)
@@ -30,6 +32,12 @@ setInterval(() => {
     sec.innerHTML=`${sec.innerHTML-1}`.toString().padStart(2,"0")
     if(min.innerHTML==0 && sec.innerHTML==0)
     {
+        clearInterval(interval)
         submit.click()
+        console.log(time)
+        time.innerHTML="Time's Up"
+        ips.forEach(i => {
+            i.disabled=true
+        });
     }
-},100);
+},10);
