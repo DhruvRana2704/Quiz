@@ -40,4 +40,4 @@ let interval=setInterval(() => {
             i.disabled=true
         });
     }
-},10);
+},1000);
