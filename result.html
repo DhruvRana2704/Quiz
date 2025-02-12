@@ -9,9 +9,10 @@
             display: flex;
             flex-direction: column;
         }
-        input{
-            margin: 1rem;
-            margin-bottom: 2rem;
+        .inputs{
+            margin-top: 0.55rem;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
         }
     </style>
 </head>
@@ -20,66 +21,77 @@
     <form  id="result">
         <ol>
             <li><div style="display: flex;"><label id="q1">How many elements are in the periodic table?</label><div class="correct1" style="margin-top: -5px;">❌</div></div></li>
-        <input type="radio" value="110" disabled name="q1" id="q1">110
+        <div class="inputs">
+        <input type="radio" value="110" disabled name="q1" id="q1">110</input>
         <input type="radio" value="114" disabled name="q1" id="q1">114
         <input type="radio" value="116" disabled name="q1" id="q1">116
         <input type="radio" value="118" disabled name="q1" id="q1">118
-        
+        </div>
         <li><div style="display: flex;"><label>Which planet in the Milky Way is the hottest?</label><div class="correct2" style="margin-left: 5px;">❌</div></div></li>
+        <div class="inputs">
         <input type="radio" value="Earth" disabled name="q2" id="q2">Earth
         <input type="radio" value="Mercury" disabled name="q2" id="q2">Mercury
         <input type="radio" value="Venus" disabled name="q2" id="q2">Venus
         <input type="radio" value="Mars" disabled name="q2" id="q2">Mars
-        
+        </div>
+
         <li><div style="display: flex;"><label>Who discovered that the Earth revolves around the sun? </label><div class="correct3" style="margin-left: 5px;">❌</div> </div></li>
+        <div class="inputs">
         <input type="radio" value="Galileo Galiliei" disabled name="q3" id="q3">Galileo Galiliei
         <input type="radio" value="Nicolaus Copernicus" disabled name="q3" id="q3">Nicolaus Copernicus
         <input type="radio" value="Issac Newton" disabled name="q3" id="q3">Issac Newton
         <input type="radio" value="Hohannes Kepler" disabled name="q3" id="q3">Hohannes Kepler
-        
+        </div>
         <li><div style="display: flex;"><label >Which planet has the most moons?</label><div class="correct4" style="margin-left: 5px;">❌</div></div> </li>
+        <div class="inputs">
         <input type="radio" value="Jupiter" disabled name="q4" id="q4">Jupiter
         <input type="radio" value="Earth" disabled name="q4" id="q4">Earth
         <input type="radio" value="Saturn" disabled name="q4" id="q4">Saturn
         <input type="radio" value="Uranus" disabled name="q4" id="q4">Uranus
-        
+        </div>
         <li><div style="display: flex;"><label >Which planet is closest to the sun?</label><div class="correct5" style="margin-left: 5px;">❌</div> </div></li>
+        <div class="inputs">
         <input type="radio" value="Venus" disabled name="q5" id="q5">Venus
         <input type="radio" value="Mercury" disabled name="q5" id="q5">Mercury
         <input type="radio" value="Mars" disabled name="q5" id="q5">Mars
         <input type="radio" value="Earth" disabled name="q5" id="q5">Earth
-        
+        </div>
         <li><div style="display: flex;"><label >Where is the strongest human muscle located?</label><div class="correct6" style="margin-left: 5px;">❌</div></div></li>
+        <div class="inputs">
         <input type="radio" value="Jaw" disabled name="q6" id="q6">Jaw
         <input type="radio" value="Biceps" disabled name="q6" id="q6">Biceps
         <input type="radio" value="Cardiac" disabled name="q6" id="q6">Cardiac
         <input type="radio" value="Hips" disabled name="q6" id="q6">Hips
-        
+        </div>
         <li><div style="display: flex;"><label>Which is the only body part that is fully grown from birth?</label><div class="correct7" style="margin-left: 5px;">❌</div></div></li>
+        <div class="inputs">
         <input type="radio" value="Ears" disabled name="q7" id="q7">Ears
         <input type="radio" value="Nose" disabled name="q7" id="q7">Nose
         <input type="radio" value="Mouth" disabled name="q7" id="q7">Mouth
         <input type="radio" value="Eyes" disabled name="q7" id="q7">Eyes
-        
+        </div>
         <li><div style="display: flex;"><label>How many bones do we have in an ear?</label> <div class="correct8" style="margin-left: 5px;">❌</div></div></li>
+        <div class="inputs">
         <input type="radio" value="1" disabled name="q8" id="q8">1
         <input type="radio" value="2" disabled name="q8" id="q8">2
         <input type="radio" value="3" disabled name="q8" id="q8">3
         <input type="radio" value="4" disabled name="q8" id="q8">4
-        
+        </div>
         <li><div style="display: flex;"><label>What scientific theory proposed that Earth revolves around the sun?</label><div class="correct9" style="margin-left: 5px;">❌</div> </div></li>
+        <div class="inputs">
         <input type="radio" value="Geocentricism" disabled name="q9" id="q9">Geocentricism
         <input type="radio" value="Heliocentrism" disabled name="q9" id="q9">Heliocentrism
         <input type="radio" value="Nebular Hypothesis" disabled name="q9" id="q9">Nebular Hypothesis
         <input type="radio" value="Planetsimal Hypothesis" disabled name="q9" id="q9">Planetsimal Hypothesis
-        
+        </div>
         <li><div style="display: flex;"><label>What is the process by which plants convert sunlight to energy?</label><div class="correct10" style="margin-left: 5px;">❌</div></div></li>
+        <div class="inputs">
         <input type="radio" value="Photosynthesis" disabled name="q10" id="q10">Photosynthesis
         <input type="radio" value="Transpiration" disabled name="q10" id="q10">Transpiration
         <input type="radio" value="Respiration" disabled name="q10" id="q10">Respiration
         <input type="radio" value="Carbon Sequentiation" disabled name="q10" id="q10">Carbon Sequentiation
+        </div>
     </ol>
-    <a href="module1.html"><input type="button" value="Retry"></a>
     </form>
     <script src="script1.js"></script>
 </body>

@@ -9,6 +9,7 @@ let ips=document.querySelectorAll('input')
 let time=document.querySelector('.timesup')
 m1_req.addEventListener('submit',(e)=>{
     e.preventDefault();
+
     let formData=new FormData(m1_req)
     let formObject={}
     for(i=1;i<=10;i++){
@@ -16,6 +17,11 @@ m1_req.addEventListener('submit',(e)=>{
     }
     sessionStorage.setItem("formObject",JSON.stringify(formObject))
     window.open("./result.html","_blank")
+    time.innerHTML="Time's Up"
+    clearInterval(interval)
+        ips.forEach(i => {
+            i.disabled=true
+        });
     // window.location.replace("./index.html")
 })
 
@@ -35,9 +41,13 @@ let interval=setInterval(() => {
         clearInterval(interval)
         submit.click()
         console.log(time)
-        time.innerHTML="Time's Up"
+        time.innerHTML="Time's Up!! No longer responses accepted."
         ips.forEach(i => {
             i.disabled=true
         });
     }
+<<<<<<< HEAD
 },1000);
+=======
+},100);
+>>>>>>> e8fce96b53e67638e4786a8f7217fcf2d0c14b27
