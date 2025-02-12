@@ -46,8 +46,4 @@ let interval=setInterval(() => {
             i.disabled=true
         });
     }
-<<<<<<< HEAD
 },1000);
-=======
-},100);
->>>>>>> e8fce96b53e67638e4786a8f7217fcf2d0c14b27
