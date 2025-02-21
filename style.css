@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.header {
+    height: 4vh;
+    background: rgb(183, 177, 177);
+    color: black;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: medium;
+    opacity: 1;
+}
+
+.rubik {
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header p {
+    margin-left: 3rem;
+}
+
+.content {
+    color: white;
+    margin-top: 3vh;
+    padding: 1rem;
+
+}
+
+.modules {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+}
+
+a:link {
+    color: black;
+}
+
+a:vlink {
+    color: black;
+}
+
+.m {
+    height: 3rem;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    background-color: rgb(221, 140, 53);
+}
+
+.m:hover {
+    scale: 1.1
+}
+
+
+form {
+    color: white;
+    padding: 2rem;
+    font-size: 1.4rem;
+}
+
+.time {
+    display: flex;
+    gap: 0.1cm;
+
+}
+
+.timesup {
+    font-size: 1.5rem;
+}
+input[type=radio] {
+    border: 0px;
+    width: 2%;
+    height: 1rem;
+}
