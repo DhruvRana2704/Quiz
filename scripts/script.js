@@ -1,49 +1,105 @@
-let m1=document.querySelector(".m1");
-let submit=document.querySelector('.submit')
-let min=document.querySelector('.min')
-let sec=document.querySelector('.sec')
-min.innerHTML=`${5}`.toString().padStart(2,"0")
-sec.innerHTML=`${0}`.toString().padStart(2,"0")
-let m1_req=document.getElementById("form")
-let ips=document.querySelectorAll('input')
-let time=document.querySelector('.timesup')
-m1_req.addEventListener('submit',(e)=>{
-    e.preventDefault();
+let submit = document.querySelector('.submit');
+let min = document.querySelector('.min');
+let sec = document.querySelector('.sec');
+let form = document.getElementById("form");
+let timeMsg = document.querySelector('.timesup');
+let inputs = document.querySelectorAll('input[type="radio"]');
 
-    let formData=new FormData(m1_req)
-    let formObject={}
-    for(i=1;i<=10;i++){
-        formObject[`q${i}`]=formData.get(`q${i}`)
-    }
-    sessionStorage.setItem("formObject",JSON.stringify(formObject))
-    window.open("./result.html","_blank")
-    time.innerHTML="Time's Up"
-    clearInterval(interval)
-        ips.forEach(i => {
-            i.disabled=true
-        });
-    // window.location.replace("./index.html")
-})
+let correctAnswers = [];
 
-let interval=setInterval(() => {
-    if(sec.innerHTML==0)
-    {
-        if(min.innerHTML!=0)
-            {
-                min.innerHTML=`${min.innerHTML-1}`.toString().padStart(2,'0')
-                sec.innerHTML=`${60}`.toString().padStart(2,"0")       
-            }
+window.onload = () => {
+  const category = localStorage.getItem('selectedCategory');
+  if (category) {
+    fetch(`https://the-trivia-api.com/v2/questions?categories=${category}&limit=10`)
+      .then(res => res.json())
+      .then(data => {
+        const ol = form.querySelector('ol');
+        ol.innerHTML = ''; // clear dummy question
+
+        for (let i = 0; i < 10; i++) {
+          const question = data[i];
+          correctAnswers[i] = question.correctAnswer;
+
+          // Shuffle options
+          const options = [...question.incorrectAnswers];
+          const randIndex = Math.floor(Math.random() * 4);
+          options.splice(randIndex, 0, question.correctAnswer);
+
+          // Create LI
+          const li = document.createElement('li');
+          const label = document.createElement('label');
+          label.id = `q${i + 1}`;
+          label.textContent = question.question.text;
+          li.appendChild(label);
+
+          // Add radio buttons
+          for (let j = 0; j < 4; j++) {
+            const input = document.createElement('input');
+            const span = document.createElement('span');
+            const lineBreak = document.createElement('br');
+
+            input.type = 'radio';
+            input.name = `q${i + 1}`;
+            input.id = `q${i + 1}${String.fromCharCode(97 + j)}`;
+            input.value = options[j];
+
+            span.id = `q${i + 1}${j + 1}`;
+            span.textContent = options[j];
+
+            li.appendChild(input);
+            li.appendChild(span);
+            li.appendChild(lineBreak);
+          }
+
+          ol.appendChild(li);
         }
-        
-    sec.innerHTML=`${sec.innerHTML-1}`.toString().padStart(2,"0")
-    if(min.innerHTML==0 && sec.innerHTML==0)
-    {
-        clearInterval(interval)
-        submit.click()
-        console.log(time)
-        time.innerHTML="Time's Up!! No longer responses accepted."
-        ips.forEach(i => {
-            i.disabled=true
-        });
+      })
+      .catch(err => console.error('Error fetching questions:', err));
+  } else {
+    console.error('No category selected!');
+  }
+};
+
+// Only one submit handler
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let score = 0;
+  const formData = new FormData(form);
+
+  for (let i = 1; i <= 10; i++) {
+    const selected = formData.get(`q${i}`);
+    if (selected === correctAnswers[i - 1]) {
+      score++;
     }
-},1000);
+  }
+
+  sessionStorage.setItem("score", score);
+  window.open("./result.html", "_blank");
+});
+
+// Timer logic
+min.innerHTML = '05';
+sec.innerHTML = '00';
+
+let interval = setInterval(() => {
+  let m = parseInt(min.innerHTML, 10);
+  let s = parseInt(sec.innerHTML, 10);
+
+  if (m === 0 && s === 0) {
+    clearInterval(interval);
+    timeMsg.innerHTML = "Time's Up!! No longer responses accepted.";
+    inputs.forEach(i => i.disabled = true);
+    submit.click();
+    return;
+  }
+
+  if (s === 0) {
+    m -= 1;
+    s = 59;
+  } else {
+    s -= 1;
+  }
+
+  min.innerHTML = `${m}`.padStart(2, '0');
+  sec.innerHTML = `${s}`.padStart(2, '0');
+}, 1000);

@@ -2,107 +2,139 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        label {
-            display: flex;
-            flex-direction: column;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Science Quiz</title>
+  <style>
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+    }
 
-        input {
-            margin: 1rem;
-            margin-bottom: 2rem;
+    input[type="radio"] {
+      margin-right: 0.5rem;
+    }
 
-        }
-    </style>
-    <link rel="stylesheet" href="../style.css">
+    li {
+      margin-bottom: 1rem;
+    }
+  </style>
+  <link rel="stylesheet" href="../style.css" />
 </head>
 
-<body >
-    <div class="rubik">
-        <div class="header" style="display: flex; justify-content: space-between;">
-            <h1 style=" margin-bottom: 1rem; padding: 0.5rem; ">Science Quiz
-            </h1>
-            <div style="padding-left: 0.5rem;">
-                <h3 class="timesup" style=" margin-bottom: 1rem; padding-left: 0.5rem;  ">Time Remaining
-                </h3>
-                <div class="time" style="display: flex; margin-top: -1vh; justify-content: center;">
-                    <h2 class="min" >05</h2><span style=" font-size: 1.5rem;">:</span>
-                    <h2 class="sec" >60</h2>
-                </div>
-            </div>
+<body>
+  <div class="rubik">
+    <div class="header" style="display: flex; justify-content: space-between;">
+      <h1 style="margin-bottom: 1rem; padding: 0.5rem;">Science Quiz</h1>
+      <div style="padding-left: 0.5rem;">
+        <h3 class="timesup" style="margin-bottom: 1rem;">Time Remaining</h3>
+        <div class="time" style="display: flex; justify-content: center;">
+          <h2 class="min">05</h2><span style="font-size: 1.5rem;">:</span>
+          <h2 class="sec">00</h2>
         </div>
+      </div>
     </div>
-    <form action="./result.html" id="form">
-        <ol>
-            <li><label id="q1">How many elements are in the periodic table?</label></li>
-            <div class="inputs">
-                <input type="radio" name="q1" class='q1' id="q1" value="110">110
-                <input type="radio" name="q1" class='q1' id="q1" value="114">114
-                <input type="radio" name="q1" class='q1' id="q1" value="116">116
-                <input type="radio" name="q1" class='q1' id="q1" value="118">118
+  </div>
 
-
-                <li><label id="q2">Which planet in the Milky Way is the hottest?</label></li>
-                <input type="radio" name="q2" id="q2" value="Earth">Earth
-                <input type="radio" name="q2" id="q2" value="Mercury">Mercury
-                <input type="radio" name="q2" id="q2" value="Venus">Venus
-                <input type="radio" name="q2" id="q2" value="Mars">Mars
-
-                <li><label id="q3">Who discovered that the Earth revolves around the sun? </label> </li>
-                <input type="radio" name="q3" id="q3" value="Galileo Galiliei">Galileo Galiliei
-                <input type="radio" name="q3" id="q3" value="Nicolaus Copernicus">Nicolaus Copernicus
-                <input type="radio" name="q3" id="q3" value="Issac Newton">Issac Newton
-                <input type="radio" name="q3" id="q3" value="Hohannes Kepler">Hohannes Kepler
-
-                <li><label id="q4">Which planet has the most moons?</label> </li>
-                <input type="radio" name="q4" id="q4" value="Jupiter">Jupiter
-                <input type="radio" name="q4" id="q4" value="Earth">Earth
-                <input type="radio" name="q4" id="q4" value="Saturn">Saturn
-                <input type="radio" name="q4" id="q4" value="Uranus">Uranus
-
-                <li><label id="q5">Which planet is closest to the sun?</label> </li>
-                <input type="radio" name="q5" id="q5" value="Venus">Venus
-                <input type="radio" name="q5" id="q5" value="Mercury">Mercury
-                <input type="radio" name="q5" id="q5" value="Mars">Mars
-                <input type="radio" name="q5" id="q5" value="Earth">Earth
-
-                <li><label id="q6">Where is the strongest human muscle located?</label></li>
-                <input type="radio" name="q6" id="q6" value="Jaw">Jaw
-                <input type="radio" name="q6" id="q6" value="Biceps">Biceps
-                <input type="radio" name="q6" id="q6" value="Cardiac">Cardiac
-                <input type="radio" name="q6" id="q6" value="Hips">Hips
-
-                <li><label id="q7">Which is the only body part that is fully grown from birth?</label></li>
-                <input type="radio" name="q7" id="q7" value="Ears">Ears
-                <input type="radio" name="q7" id="q7" value="Nose">Nose
-                <input type="radio" name="q7" id="q7" value="Mouth">Mouth
-                <input type="radio" name="q7" id="q7" value="Eyes">Eyes
-
-                <li><label id="q8">How many bones do we have in an ear?</label> </li>
-                <input type="radio" name="q8" id="q8" value="1">1
-                <input type="radio" name="q8" id="q8" value="2">2
-                <input type="radio" name="q8" id="q8" value="3">3
-                <input type="radio" name="q8" id="q8" value="4">4
-
-                <li><label id="q9">What scientific theory proposed that Earth revolves around the sun?</label></li>
-                <input type="radio" name="q9" id="q9" value="Geocentricism">Geocentricism
-                <input type="radio" name="q9" id="q9" value="Heliocentrism">Heliocentrism
-                <input type="radio" name="q9" id="q9" value="Nebular Hypothesis">Nebular Hypothesis
-                <input type="radio" name="q9" id="q9" value="Planetsimal Hypothesis">Planetsimal Hypothesis
-
-                <li><label id="q10">What is the process by which plants convert sunlight to energy?</label></li>
-                <input type="radio" name="q10" id="q10" value="Photosynthesis">Photosynthesis
-                <input type="radio" name="q10" id="q10" value="Transpiration">Transpiration
-                <input type="radio" name="q10" id="q10" value="Respiration">Respiration
-                <input type="radio" name="q10" id="q10" value="Carbon Sequentiation">Carbon Sequentiation
-        </ol>
+  <form action="./result.html" id="form">
+    <ol>
+      <li>
+        <label id="q1">Loading...</label>
+        <div>
+          <input type="radio" name="q1" id="q1a"><span id="q11"></span><br>
+          <input type="radio" name="q1" id="q1b"><span id="q12"></span><br>
+          <input type="radio" name="q1" id="q1c"><span id="q13"></span><br>
+          <input type="radio" name="q1" id="q1d"><span id="q14"></span>
         </div>
-        <input type="submit" class="submit" value="Submit">
-    </form>
-    <script src="../scripts/script.js"></script>
+      </li>
+      <li>
+        <label id="q2">Loading...</label>
+        <div>
+          <input type="radio" name="q2" id="q2a"><span id="q21"></span><br>
+          <input type="radio" name="q2" id="q2b"><span id="q22"></span><br>
+          <input type="radio" name="q2" id="q2c"><span id="q23"></span><br>
+          <input type="radio" name="q2" id="q2d"><span id="q24"></span>
+        </div>
+      </li>
+      <li>
+        <label id="q3">Loading...</label>
+        <div>
+          <input type="radio" name="q3" id="q3a"><span id="q31"></span><br>
+          <input type="radio" name="q3" id="q3b"><span id="q32"></span><br>
+          <input type="radio" name="q3" id="q3c"><span id="q33"></span><br>
+          <input type="radio" name="q3" id="q3d"><span id="q34"></span>
+        </div>
+      </li>
+      <li>
+        <label id="q4">Loading...</label>
+        <div>
+          <input type="radio" name="q4" id="q4a"><span id="q41"></span><br>
+          <input type="radio" name="q4" id="q4b"><span id="q42"></span><br>
+          <input type="radio" name="q4" id="q4c"><span id="q43"></span><br>
+          <input type="radio" name="q4" id="q4d"><span id="q44"></span>
+        </div>
+      </li>
+      <li>
+        <label id="q5">Loading...</label>
+        <div>
+          <input type="radio" name="q5" id="q5a"><span id="q51"></span><br>
+          <input type="radio" name="q5" id="q5b"><span id="q52"></span><br>
+          <input type="radio" name="q5" id="q5c"><span id="q53"></span><br>
+          <input type="radio" name="q5" id="q5d"><span id="q54"></span>
+        </div>
+      </li>
+      <li>
+        <label id="q6">Loading...</label>
+        <div>
+          <input type="radio" name="q6" id="q6a"><span id="q61"></span><br>
+          <input type="radio" name="q6" id="q6b"><span id="q62"></span><br>
+          <input type="radio" name="q6" id="q6c"><span id="q63"></span><br>
+          <input type="radio" name="q6" id="q6d"><span id="q64"></span>
+        </div>
+      </li>
+      <li>
+        <label id="q7">Loading...</label>
+        <div>
+          <input type="radio" name="q7" id="q7a"><span id="q71"></span><br>
+          <input type="radio" name="q7" id="q7b"><span id="q72"></span><br>
+          <input type="radio" name="q7" id="q7c"><span id="q73"></span><br>
+          <input type="radio" name="q7" id="q7d"><span id="q74"></span>
+        </div>
+      </li>
+      <li>
+        <label id="q8">Loading...</label>
+        <div>
+          <input type="radio" name="q8" id="q8a"><span id="q81"></span><br>
+          <input type="radio" name="q8" id="q8b"><span id="q82"></span><br>
+          <input type="radio" name="q8" id="q8c"><span id="q83"></span><br>
+          <input type="radio" name="q8" id="q8d"><span id="q84"></span>
+        </div>
+      </li>
+      <li>
+        <label id="q9">Loading...</label>
+        <div>
+          <input type="radio" name="q9" id="q9a"><span id="q91"></span><br>
+          <input type="radio" name="q9" id="q9b"><span id="q92"></span><br>
+          <input type="radio" name="q9" id="q9c"><span id="q93"></span><br>
+          <input type="radio" name="q9" id="q9d"><span id="q94"></span>
+        </div>
+      </li>
+      <li>
+        <label id="q10">Loading...</label>
+        <div>
+          <input type="radio" name="q10" id="q10a"><span id="q101"></span><br>
+          <input type="radio" name="q10" id="q10b"><span id="q102"></span><br>
+          <input type="radio" name="q10" id="q10c"><span id="q103"></span><br>
+          <input type="radio" name="q10" id="q10d"><span id="q104"></span>
+        </div>
+      </li>
+
+      
+    </ol>
+    <input type="submit" class="submit" value="Submit" />
+  </form>
+
+  <script src="../scripts/script.js"></script>
 </body>
 
 </html>

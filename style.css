@@ -4,12 +4,15 @@
 }
 
 body {
+    background: fixed;
     background-image: url(./images/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     
 }
-
+.m{
+    color:black
+}
 .header {
     height: 4vh;
     background: rgb(183, 177, 177);
@@ -43,6 +46,7 @@ body {
 .modules {
     margin-top: 2rem;
     font-size: 1.3rem;
+    width: 1vw;
 }
 
 a:link {
